@@ -143,11 +143,21 @@ def links() {
 }
 
 def moreTiles() {
+	def phrases = location?.helloHome?.getPhrases()*.label
+	phrases?.sort()
+	log.debug "phrases: $phrases"
+            
 	dynamicPage(name: "moreTiles", title: "More Tiles...", install:false) {
 		section() {
 			input "showMode", title: "Mode", "bool", required: true, defaultValue: true
 			input "showHelloHome", title: "Hello, Home! Actions", "bool", required: true, defaultValue: true
 			input "showClock", title: "Clock", "enum", multiple: false, required: true, defaultValue: "Small Analog", options: ["Small Analog", "Small Digital", "Large Analog", "Large Digital", "None"]
+        }
+	    
+        if (phrases) {
+			section("Hello, Home!") {
+				input "phrases", "enum", title: "Which phrases?", multiple: true, options: phrases, required: false
+			}
 		}
 	}
 }
@@ -554,13 +564,18 @@ def renderModeTile(data) {
 }
 
 def renderHelloHomeTile(data) {
+	if (!phrases || !showHelloHome) return ""
+    
+    def phraseList = ""
+    phrases?.each{phraseList = phraseList + """<li data-icon="false"><a href="#" class="st-hello-home-button">$it</a></li>"""}
+
 """
 <div class="hello-home tile menu" data-rel="popup" data-popup="hello-home-popup">
 	<div class="title">Hello, Home!</div>
 	<div class="icon"><i class="fa fa-comment-o"></i></div>
 	<div data-role="popup" id="hello-home-popup" data-overlay-theme="b">
 		<ul data-role="listview" data-inset="true" style="min-width:210px;">
-			${data.phrases.collect{"""<li data-icon="false">$it</li>"""}.join("\n")}
+			$phraseList
 		</ul>
 	</div>
 </div>
