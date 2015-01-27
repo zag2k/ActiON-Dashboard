@@ -572,7 +572,7 @@ def renderHelloHomeTile(data) {
 """
 <div class="hello-home tile menu" data-rel="popup" data-popup="hello-home-popup">
 	<div class="title">Hello, Home!</div>
-	<div class="icon"><i class="fa fa-comment-o"></i></div>
+	<div class="icon"><i class="fa fa-tasks"></i></div>
 	<div data-role="popup" id="hello-home-popup" data-overlay-theme="b">
 		<ul data-role="listview" data-inset="true" style="min-width:210px;">
 			$phraseList
@@ -641,7 +641,7 @@ def getListIcon(type) {
 	def icons = [
 		clock: """<i class="fa fa-fw fa-clock-o"></i>""",
 		mode: """<i class="fa fa-fw fa-gear"></i>""",
-		"hello-home": """<i class="fa fa-fw fa-comment-o"></i>""",
+		"hello-home": """<i class="fa fa-fw fa-tasks"></i>""",
 		weather: """<i class="fa fa-fw fa-sun-o"></i>""",
 		holiday: """<i class="fa fa-fw fa-tree"></i>""",
 		lock: """<i class="fa fa-fw fa-lock"></i>""",
