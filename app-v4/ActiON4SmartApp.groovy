@@ -791,13 +791,16 @@ background-color: #436d8d;
 background-color: #505050;
 }
 .contact {
-background-color: #808080;
+background-color: #606e78;
 }
 .music {
 background-color: #384046;
 }
 .temperature .text {
 font-size: 3em;
+}
+.refresh {
+background-color: #9BA7AF;
 }
 /*****************************/
 </style>
