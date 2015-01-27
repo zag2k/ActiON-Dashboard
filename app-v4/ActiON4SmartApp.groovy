@@ -778,7 +778,27 @@ def customCSS() {
 """
 <style>
 /*** Enter custom CSS here ***/
-
+.mode, .hello-home {
+background-color: #436d8d;
+}
+.switch, .dimmer {
+background-color: #606e78;
+}
+.temperature {
+background-color: #436d8d;
+}
+.energy {
+background-color: #505050;
+}
+.contact {
+background-color: #808080;
+}
+.music {
+background-color: #384046;
+}
+.temperature .text {
+font-size: 3em;
+}
 /*****************************/
 </style>
 """
