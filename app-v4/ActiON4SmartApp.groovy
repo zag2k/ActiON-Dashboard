@@ -12,7 +12,7 @@
  *
  */
 definition(
-    name: "ActiON4.5T",
+    name: "ActiON4.5",
     namespace: "625alex",
     author: "Alex Malikov",
     description: "ActiON Dashboard, a SmartThings web client.",
