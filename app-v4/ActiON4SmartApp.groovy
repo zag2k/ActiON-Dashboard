@@ -765,7 +765,7 @@ def allDeviceData() {
 	data.sort{state?.sortOrder?."$it.type-$it.device"}
 }
 
-def html() {render contentType: "text/html", data: "<!DOCTYPE html><html><head>${head()}${CustomCSS()${themes()}</head><body style='background-color:black'>\n${renderTiles()}\n${renderWTFCloud()}</body></html>"}
+def html() {render contentType: "text/html", data: "<!DOCTYPE html><html><head>${head()}${themes()}</head><body style='background-color:black'>\n${renderTiles()}\n${renderWTFCloud()}</body></html>"}
 def renderTiles() {"""<div class="tiles">\n${allDeviceData()?.collect{renderTile(it)}.join("\n")}<div class="blank tile"></div></div>"""}
 
 def renderWTFCloud() {"""<div data-role="popup" id="wtfcloud-popup" data-overlay-theme="b" class="wtfcloud"><div class="icon cloud" onclick="clearWTFCloud()"><i class="fa fa-cloud"></i></div><div class="icon message" onclick="clearWTFCloud()"><i class="fa fa-question"></i><i class="fa fa-exclamation"></i><i class='fa fa-refresh'></i></div></div>"""}
