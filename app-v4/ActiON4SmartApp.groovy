@@ -778,6 +778,9 @@ def customCSS() {
 """
 <style>
 /*** Enter custom CSS here ***/
+
+/* BLUE GRAY */
+/*
 .mode, .hello-home {
 background-color: #436d8d;
 }
@@ -802,7 +805,38 @@ font-size: 3em;
 .refresh {
 background-color: #9BA7AF;
 }
+*/
 /*****************************/
+
+/* TEAL */
+.mode, .hello-home {
+background-color: #008080;
+}
+.switch, .dimmer {
+background-color: #005C5C;
+}
+.temperature {
+background-color: #008080;
+}
+.energy {
+background-color: #505050;
+}
+.contact {
+background-color: #71B8B8;
+}
+.music {
+background-color: #384046;
+}
+.temperature .text {
+font-size: 3em;
+}
+.refresh {
+background-color: #9BA7AF;
+}
+.dimmer.active .ui-slider-bg.ui-btn-active {
+background-color: #008080;
+}
+
 </style>
 """
 }
